@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .user-box {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .user-box:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .user-box .info {
+            flex: 0 0 100px;
+            margin-right: 20px;
+        }
+
+        .user-box .info img {
+            width: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .user-box .details {
+            flex: 1;
+        }
+
+        .user-box .details p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .user-box .edit-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .user-box .edit-link:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>welcome to Admin Pannel</h1>
+{{#each users}}
+    <div class="user-box">
+        <div class="info">
+            <img src="{{this.profile_picture}}" alt="Profile Photo">
+        </div>
+        <div class="details">
+            <p><strong>Timestamp:</strong> {{this.timestamp}}</p>
+            <p><strong>Email Address:</strong> {{this.email}}</p>
+            <p><strong>Name:</strong> {{this.name}}</p>
+            <p><strong>Roll No:</strong> {{this.roll_no}}</p>
+            <p><strong>Branch:</strong> {{this.branch}}</p>
+            <p><strong>Section:</strong> {{this.section}}</p>
+            <!-- Add other details here -->
+            <a href="http://127.0.0.1:8000/update/{{this._id}}" class="edit-link">Edit</a>
+        </div>
+    </div>
+{{/each}}
+</body>
+</html>

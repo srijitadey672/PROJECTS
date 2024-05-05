@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="file"] {
+            padding: 5px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        .submit {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        /* Responsive Styles */
+        @media only screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            .form-group {
+                margin-bottom: 10px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            input[type="password"],
+            select,
+            textarea {
+                padding: 8px;
+                font-size: 14px;
+            }
+
+            .submit {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form class="form" id="registration-form" action="/register" method="post" enctype="multipart/form-data">
+        <h1>Registration Form</h1>
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="example@example.com" required>
+        </div>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Full Name" required>
+        </div>
+        <div class="form-group">
+            <label for="profile-picture">Profile Picture:</label>
+            <input type="file" id="profile-picture" name="profile_picture" accept="image/*" required>
+        </div>
+        <div class="form-group">
+            <label for="roll-no">Roll No:</label>
+            <input type="text" id="roll-no" name="roll_no" placeholder="046" required>
+        </div>
+        <div class="form-group">
+            <label for="branch">Select Branch:</label>
+            <select id="branch" name="branch" required>
+                <option value="" disabled selected>Select Branch</option>
+                <option value="BCA">BCA</option>
+                <option value="CSE">CSE</option>
+                <option value="ECE">ECE</option>
+                <option value="MCE">MCA</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="section">Section:</label>
+            <select id="section" name="section" required>
+                <option value="" disabled selected>Section</option>
+                <option value="G">G</option>
+                <option value="H">H</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="student-email">Student Email:</label>
+            <input type="email" id="student-email" name="student_email" placeholder="your.name@stu.adamasuniversity.ac.in" required>
+        </div>
+        <div class="form-group">
+            <label for="phone-number">Phone Number:</label>
+            <input type="tel" id="phone-number" name="phone_number" placeholder="6207306283" required>
+        </div>
+        <div class="form-group">
+            <label for="local-address">Local Address:</label>
+            <input type="text" id="local-address" name="local_address" placeholder="Local Address" required>
+        </div>
+        <div class="form-group">
+            <label for="father-name">Father's Name:</label>
+            <input type="text" id="father-name" name="father_name" placeholder="Father's Name" required>
+        </div>
+        <div class="form-group">
+            <label for="father-email">Father's Email Address:</label>
+            <input type="email" id="father-email" name="father_email" placeholder="Father's Email Address" required>
+        </div>
+        <div class="form-group">
+            <label for="father-phone">Father's Phone Number:</label>
+            <input type="tel" id="father-phone" name="father_phone_number" placeholder="Father's Phone Number" required>
+        </div>
+        <div class="form-group">
+            <label for="father-occupation">Father's Occupation:</label>
+            <input type="text" id="father-occupation" name="father_occupation" placeholder="Father's Occupation" required>
+        </div>
+        <div class="form-group">
+            <label for="mother-name">Mother's Name:</label>
+            <input type="text" id="mother-name" name="mother_name" placeholder="Mother's Name" required>
+        </div>
+        <div class="form-group">
+            <label for="mother-email">Mother's Email Address:</label>
+            <input type="email" id="mother-email" name="mother_email" placeholder="Mother's Email Address" required>
+        </div>
+        <div class="form-group">
+            <label for="mother-phone">Mother's Phone Number:</label>
+            <input type="tel" id="mother-phone" name="mother_phone_number" placeholder="Mother's Phone Number" required>
+        </div>
+        <div class="form-group">
+            <label for="mother-occupation">Mother's Occupation:</label>
+            <input type="text" id="mother-occupation" name="mother_occupation" placeholder="Mother's Occupation" required>
+        </div>
+        <div class="form-group">
+            <label for="parent-address">Parent's Address:</label>
+            <input type="text" id="parent-address" name="parent_address" placeholder="Parent's Address" required>
+        </div>
+        <div class="form-group">
+            <label for="class-10-percentage">Class X Percentage %:</label>
+            <input type="text" id="class-10-percentage" name="class_10_percentage" placeholder="Class X Percentage %" required>
+        </div>
+        <div class="form-group">
+            <label for="class-12-percentage">Class XII Percentage %:</label>
+            <input type="text" id="class-12-percentage" name="class_12_percentage" placeholder="Class XII Percentage %" required>
+        </div>
+        <div class="form-group">
+            <label for="mentor-details">Mentor Mentee Details:</label>
+            <textarea id="mentor-details" name="Mentor" placeholder="Enter your issue" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter a strong password" required>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="declaration" name="declaration" value="true" required>
+            <label for="declaration"> I hereby declare that the information furnished above is true, complete and correct to the best of my knowledge and belief.</label>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="submit" value="Register">
+        </div>
+    </form>
+</div>
+</body>
+</html>

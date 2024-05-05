@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update User</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Update User</h1>
+    <form id="updateForm" action="/update/{{user._id}}" method="POST">
+        <input type="email" name="email" placeholder="Email address" value="{{user.email}}" required disabled>
+        <input type="text" name="name" placeholder="Name" value="{{user.name}}" required>
+        <input type="text" name="roll_no" placeholder="Roll No" value="{{user.roll_no}}">
+        <input type="text" name="branch" placeholder="Branch" value="{{user.branch}}">
+        <input type="text" name="section" placeholder="Section" value="{{user.section}}">
+        <input type="email" name="student_email" placeholder="Student Email" value="{{user.student_email}}">
+        <input type="tel" name="phone_number" placeholder="Phone Number" value="{{user.phone_number}}">
+        <input type="text" name="local_address" placeholder="Local Address" value="{{user.local_address}}">
+        <input type="text" name="father_name" placeholder="Father's Name" value="{{user.father_name}}">
+        <input type="text" name="mother_name" placeholder="Mother's Name" value="{{user.mother_name}}">
+
+        <button type="submit">Update</button>
+    </form>
+</div>
+</body>
+</html>
